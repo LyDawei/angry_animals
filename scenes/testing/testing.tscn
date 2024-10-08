@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqcptacpjr801"]
+
+[ext_resource type="Texture2D" uid="uid://brd35iw1hha0j" path="res://icon.svg" id="1_og1o7"]
+[ext_resource type="Texture2D" uid="uid://cgkaeuxvgmw7e" path="res://assets/env/elementStone025.png" id="2_p4daj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gcx3v"]
+radius = 64.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j82bc"]
+size = Vector2(68, 218)
+
+[node name="Testing" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(536, 67)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture_filter = 1
+texture = ExtResource("1_og1o7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_gcx3v")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(557, 434)
+rotation = 0.279253
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+rotation = 0.279253
+texture = ExtResource("2_p4daj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 1)
+rotation = 0.279253
+shape = SubResource("RectangleShape2D_j82bc")
