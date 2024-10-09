@@ -15,4 +15,4 @@ texture = ExtResource("1_lcsn3")
 [node name="water" parent="." instance=ExtResource("2_ifk5j")]
 
 [node name="AnimalStart" type="Marker2D" parent="."]
-position = Vector2(147, 198)
+position = Vector2(167, 401)

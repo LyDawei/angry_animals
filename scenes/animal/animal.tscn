@@ -21,15 +21,24 @@ scale = Vector2(2.92, 2.92)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4hix5")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -77.0
-offset_top = -88.0
-offset_right = 80.0
-offset_bottom = -24.0
+[node name="AnimalState" type="Label" parent="."]
+offset_left = -76.0
+offset_top = -148.0
+offset_right = 81.0
+offset_bottom = -84.0
 scale = Vector2(0.998348, 1)
 theme_override_colors/font_color = Color(0.670389, 0.177053, 0.235033, 1)
 theme_override_font_sizes/font_size = 46
 text = "DEBUG"
+
+[node name="Vector2_Debug" type="Label" parent="."]
+offset_left = -132.0
+offset_top = -78.0
+offset_right = 131.0
+offset_bottom = -33.0
+theme_override_colors/font_color = Color(0.778997, 0.168401, 0.20182, 1)
+theme_override_font_sizes/font_size = 32
+text = "VECTOR2_DEBUG"
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_animal_exited"]
