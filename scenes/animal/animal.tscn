@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0adwmwu0kpyi"]
+[gd_scene load_steps=6 format=3 uid="uid://c0adwmwu0kpyi"]
 
 [ext_resource type="Script" path="res://scenes/animal/animal.gd" id="1_3i1nt"]
 [ext_resource type="Texture2D" uid="uid://d26bqb1kcsu8t" path="res://assets/player/parrot.png" id="1_kx6kv"]
+[ext_resource type="Texture2D" uid="uid://dqrmmiri4y6xr" path="res://assets/items/arrow.png" id="3_4iqmk"]
+[ext_resource type="AudioStream" uid="uid://cco66ohrtlacm" path="res://assets/audio/stretch2.ogg" id="4_xbvjq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4hix5"]
 radius = 26.0
@@ -23,9 +25,9 @@ shape = SubResource("CircleShape2D_4hix5")
 
 [node name="AnimalState" type="Label" parent="."]
 offset_left = -76.0
-offset_top = -148.0
+offset_top = -200.0
 offset_right = 81.0
-offset_bottom = -84.0
+offset_bottom = -136.0
 scale = Vector2(0.998348, 1)
 theme_override_colors/font_color = Color(0.670389, 0.177053, 0.235033, 1)
 theme_override_font_sizes/font_size = 46
@@ -33,12 +35,20 @@ text = "DEBUG"
 
 [node name="Vector2_Debug" type="Label" parent="."]
 offset_left = -132.0
-offset_top = -78.0
+offset_top = -117.0
 offset_right = 131.0
-offset_bottom = -33.0
+offset_bottom = -72.0
 theme_override_colors/font_color = Color(0.778997, 0.168401, 0.20182, 1)
 theme_override_font_sizes/font_size = 32
 text = "VECTOR2_DEBUG"
+
+[node name="Arrow" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_4iqmk")
+offset = Vector2(200, 0)
+
+[node name="Stretch_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_xbvjq")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_animal_exited"]
