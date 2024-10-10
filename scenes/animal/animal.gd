@@ -13,12 +13,6 @@ var _start:Vector2 = Vector2.ZERO
 var _drag_start:Vector2 = Vector2.ZERO
 var _dragged_vector:Vector2 = Vector2.ZERO
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	SignalManager.on_animal_died.connect(handle_animal_died)
-	_start = position
-	pass # Replace with function body.
-	
 func detect_release()->bool:
 	if _state == ANIMAL_STATE.DRAG:
 		if Input.is_action_just_released('drag'):
@@ -26,6 +20,8 @@ func detect_release()->bool:
 			return true
 	return false
 
+# Subtract current mouse position by Vector2.Zero.
+# This gives us a reference point of what the "dragged vector" is.
 func get_dragged_vector(gmp:Vector2)->Vector2:
 	return gmp - _drag_start
 	
@@ -48,7 +44,8 @@ func update_drag()->void:
 	if detect_release():
 		return
 	
-	var gmp = get_global_mouse_position()
+	# Get global mouse position and then get the dragged vector.
+	var gmp = get_global_mouse_position() 
 	_dragged_vector = get_dragged_vector(gmp)
 	drag_in_limits()
 	pass
@@ -63,7 +60,16 @@ func set_new_state(new_state: ANIMAL_STATE)->void:
 		freeze = false
 	elif _state == ANIMAL_STATE.DRAG:
 		freeze = true
-		
+
+func handle_animal_died() -> void:
+	queue_free()
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	SignalManager.on_animal_died.connect(handle_animal_died)
+	_start = position
+	pass # Replace with function body.
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	update(delta)
@@ -74,10 +80,6 @@ func _on_animal_exited() -> void:
 	SignalManager.on_animal_died.emit()
 	pass # Replace with function body.
 
-func handle_animal_died() -> void:
-	queue_free()
-
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if (_state == ANIMAL_STATE.READY and event.is_action_pressed('drag')):
 		set_new_state(ANIMAL_STATE.DRAG)
-		pass # Replace with function body.
