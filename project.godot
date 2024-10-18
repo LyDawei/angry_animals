@@ -23,7 +23,7 @@ SoundManager="*res://sound_manager.gd"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/size/resizable=false
 
 [input]
 

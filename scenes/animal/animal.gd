@@ -55,7 +55,7 @@ func update_drag()->void:
 		return
 	
 	# Get global mouse position and then get the dragged vector.
-	var gmp = get_global_mouse_position() 
+	var gmp = get_global_mouse_position()
 	_dragged_vector = get_dragged_vector(gmp)
 	play_stretch_sound()
 	drag_in_limits()
@@ -85,6 +85,7 @@ func set_new_state(new_state: ANIMAL_STATE)->void:
 		launch_sound.play()
 		apply_central_impulse(get_impulse())
 	elif _state == ANIMAL_STATE.DRAG:
+		_drag_start = get_global_mouse_position()
 		freeze = true
 		arrow.show()
 
@@ -130,7 +131,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_animal_exited() -> void:
 	die()
-
+ 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if (_state == ANIMAL_STATE.READY and event.is_action_pressed('drag')):
 		set_new_state(ANIMAL_STATE.DRAG)
