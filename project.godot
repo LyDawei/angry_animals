@@ -21,6 +21,10 @@ ScoreManager="*res://score_manager.gd"
 SignalManager="*res://signal_manager.gd"
 SoundManager="*res://sound_manager.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 drag={
