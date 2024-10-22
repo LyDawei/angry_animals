@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://c33q03w8vwuef"]
+
+[ext_resource type="Script" path="res://scenes/levelbutton/level_button.gd" id="1_1q2ln"]
+[ext_resource type="Texture2D" uid="uid://bipifvn02jct5" path="res://assets/ui/panel_beige.png" id="1_o2mik"]
+[ext_resource type="Theme" uid="uid://bfka55yahwbd0" path="res://scenes/mainmenu/button_theme.tres" id="2_5pmm8"]
+
+[node name="LevelButton" type="TextureButton"]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("1_o2mik")
+script = ExtResource("1_1q2ln")
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MC"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextLabel" type="Label" parent="MC/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_5pmm8")
+text = "Level
+1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="MC/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_5pmm8")
+theme_override_font_sizes/font_size = 20
+text = "1000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

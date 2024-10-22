@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://plvhlerbfi38"]
+[gd_scene load_steps=4 format=3 uid="uid://plvhlerbfi38"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_b3okf"]
 [ext_resource type="Texture2D" uid="uid://pvteiwe4ra7v" path="res://assets/scene/colored_castle.png" id="1_lcsn3"]
 [ext_resource type="PackedScene" uid="uid://v5186e0psjio" path="res://scenes/water/water.tscn" id="2_ifk5j"]
-[ext_resource type="PackedScene" uid="uid://bil0spyjx3h80" path="res://scenes/cup/cup.tscn" id="4_rm1ya"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_b3okf")
@@ -17,6 +16,3 @@ texture = ExtResource("1_lcsn3")
 
 [node name="AnimalStart" type="Marker2D" parent="."]
 position = Vector2(178, 354)
-
-[node name="cup" parent="." instance=ExtResource("4_rm1ya")]
-position = Vector2(572, 457)
