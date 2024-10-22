@@ -41,17 +41,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -154.0
-offset_top = -50.0
-offset_right = 154.0
-offset_bottom = 50.0
+offset_left = -222.0
+offset_top = 9.00003
+offset_right = 86.0
+offset_bottom = 109.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.39, 1.39)
+alignment = 1
 
 [node name="LevelButton" parent="HBoxContainer" instance=ExtResource("2_x13dk")]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
+size_flags_horizontal = 1
 
 [node name="LevelButton2" parent="HBoxContainer" instance=ExtResource("2_x13dk")]
 layout_mode = 2
@@ -63,10 +64,10 @@ level_number = 3
 
 [node name="MC" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 338.0
-offset_top = 69.0
-offset_right = 899.0
-offset_bottom = 160.0
+offset_left = 263.0
+offset_top = 58.0
+offset_right = 951.0
+offset_bottom = 149.0
 rotation = 0.193732
 
 [node name="Label" type="Label" parent="MC"]
@@ -74,4 +75,4 @@ layout_mode = 2
 theme = SubResource("Theme_duglf")
 theme_override_colors/font_color = Color(0.128581, 0.660158, 0.814333, 1)
 theme_override_colors/font_shadow_color = Color(0.479834, 0.479834, 0.479834, 1)
-text = "ANGRY BIRDS!"
+text = "ANGRY ANIMALS!"
