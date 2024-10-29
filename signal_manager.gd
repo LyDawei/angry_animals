@@ -4,3 +4,5 @@ signal on_water_collide
 signal on_animal_died
 signal on_attempt_made
 signal on_cup_destroyed
+signal on_score_updated
+signal on_level_completed

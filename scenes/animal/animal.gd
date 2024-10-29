@@ -84,6 +84,8 @@ func set_new_state(new_state: ANIMAL_STATE)->void:
 		arrow.hide()
 		launch_sound.play()
 		apply_central_impulse(get_impulse())
+		SignalManager.on_attempt_made.emit()
+
 	elif _state == ANIMAL_STATE.DRAG:
 		_drag_start = get_global_mouse_position()
 		freeze = true
